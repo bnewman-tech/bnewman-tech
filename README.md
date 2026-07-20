@@ -34,12 +34,16 @@
 
 <p>
   <img
-    src="https://skillicons.dev/icons?i=python,fastapi,postgres,azure,docker,githubactions,typescript,react"
-    alt="Python, FastAPI, PostgreSQL, Azure, Docker, GitHub Actions, TypeScript, and React"
+    src="./assets/data-platform-tools.svg"
+    alt="Python, Prefect, Databricks, dbt, and Delta Lake"
+    width="410"
+  />
+  <img
+    src="./assets/application-tools.svg"
+    alt="FastAPI, Azure, PostgreSQL, React, and TypeScript"
+    width="410"
   />
 </p>
-
-`Prefect` · `Databricks` · `dbt` · `Delta Lake` · `Pydantic` · `OpenAI`
 
 ## Latest writing
 
