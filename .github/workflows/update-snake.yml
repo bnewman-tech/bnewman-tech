@@ -1,0 +1,42 @@
+name: Update Contribution Snake
+
+on:
+  schedule:
+    - cron: "47 5 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: profile-content
+
+permissions:
+  contents: write
+
+jobs:
+  update-snake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          persist-credentials: false
+
+      - name: Generate contribution snake
+        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            assets/contribution-snake.svg?color_snake=#087fa6&color_dots=#f3efe7,#9ec5d7,#5aa6c0,#27698c,#087fa6
+            assets/contribution-snake-dark.svg?color_snake=#43b6d4&color_dots=#081c2c,#173f5f,#27698c,#087fa6,#43b6d4
+
+      - name: Commit generated assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/contribution-snake.svg assets/contribution-snake-dark.svg
+          git diff --cached --quiet || git commit -m "Update contribution snake"
+          gh auth setup-git
+          git push

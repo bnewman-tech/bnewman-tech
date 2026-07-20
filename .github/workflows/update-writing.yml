@@ -1,0 +1,31 @@
+name: Update Writing
+
+on:
+  schedule:
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: profile-content
+
+permissions:
+  contents: write
+
+jobs:
+  update-writing:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          persist-credentials: false
+
+      - name: Update latest writing
+        uses: gautamkrishnar/blog-post-workflow@2786e54a01b71aec80a5118c2bd6b5044e842597 # v1
+        with:
+          gh_token: ${{ github.token }}
+          feed_list: https://briannewman.info/rss.xml
+          max_post_count: 3
+          enable_keepalive: false
+          commit_message: Update latest writing
