@@ -1,0 +1,24 @@
+assets/data-platform-tools.svg
+  s_4af38f55729b1f::t_00baf72eaaf637 1-55,57-59
+  s_4af38f55729b1f::t_5e27c714c25175 56
+assets/application-tools.svg
+  s_4af38f55729b1f::t_48e88f910c0f61 1-59
+README.md
+  s_4af38f55729b1f::t_1b4765f0cdc3f8 37-44
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "b49eef9e7b753680c3df9aa7a2a69613f4f656b0",
+  "prompts": {},
+  "sessions": {
+    "s_4af38f55729b1f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f7c70-d48e-71b0-aa46-8b31f72d5bc5",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Brian Newman <newman_tech@outlook.com>"
+    }
+  }
+}
