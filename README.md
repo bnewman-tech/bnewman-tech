@@ -48,6 +48,7 @@
 ## Latest writing
 
 <!-- BLOG-POST-LIST:START -->
+- [Queue Models, Not Commands: A Demand-Driven dbt Scheduler](https://briannewman.info/blog/demand-driven-dbt-scheduler)
 - [Engineer to Zero](https://briannewman.info/blog/engineer-to-zero)
 - [My Python Data Stack in 2026](https://briannewman.info/blog/my-python-data-stack)
 <!-- BLOG-POST-LIST:END -->
